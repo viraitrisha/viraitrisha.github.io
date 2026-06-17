@@ -1,14 +1,65 @@
 :root {
-    --primary-bg: #0E151F;
-    --secondary-bg: #F2F4FF;
-    --primary-text: #314B6E;
-    --secondary-text: #BCB3A4;
-    --accent: #5F80A3;
+    /* ===== Text & Background ===== */
+    --heading-color: #0A1F44;   /* Headings, Btns, Active Status */
+    --link-color: #2563EB;      /* Link Color */
+    --text-color: #1F2937;      /* Text Color */
+    --subtext-color: #6B7280;   /* Subtext Color */
+    --btn-text-color: #FFFFFF;  /* Btn Text Color */
+    --hover-color: #1E3A8A;     /* Hover Status */
 
-    --shadow:
-    0 4px 10px rgba(0,0,0,0.08),
-    0 10px 25px rgba(0,0,0,0.08);
+    --primary-bg: #FAFBFC;      /* Page Background */
+    --secondary-bg: #F8FAFC;    /* Header & Footer Background */
+    --card-bg: #F1F5F9;         /* Cards Background */
 
+    /* ===== Border ===== */
+    --border-color: #E2E8F0;    /* Cards, Inputs, Separator Border */
+    
+    /* ===== Shadows ===== */
+    --shadow-sm: 0 1px 2px rgba(10, 31, 68, 0.06);
+    --shadow-md: 0 4px 6px rgba(10, 31, 68, 0.08), 0 2px 4px rgba(10, 31, 68, 0.06);
+    --shadow-lg: 0 10px 15px rgba(10, 31, 68, 0.1), 0 4px 6px rgba(10, 31, 68, 0.05);
+    --shadow-xl: 0 20px 25px rgba(10, 31, 68, 0.12), 0 10px 10px rgba(10, 31, 68, 0.04);
+    --shadow-hover: 0 8px 20px rgba(10, 31, 68, 0.15);    
+
+    /* ===== Notice ===== */
+    --color-success: #2F855A;   /* Success Color */
+    --color-warning: #C05621;   /* Warning Color */
+    --color-error: #C53030;     /* Error Color */
+
+    body.dark-mode {
+        /* ===== Text & Background ===== */
+        --heading-color: #E2E8F0;   /* Headings, Btns, Active Status */
+        --link-color: #63A4FF;      /* Link Color */
+        --text-color: #CBD5E1;      /* Text Color */
+        --subtext-color: #94A3B8;   /* Subtext Color */
+        --btn-text-color: #0A1628;  /* Btn Text Color */
+        --hover-color: #82B1FF;     /* Hover Status */
+        
+        --primary-bg: #0B1121;      /* Page Background */
+        --secondary-bg: #131C31;    /* Header & Footer Background */
+        --card-bg: #1A2540;         /* Cards Background */
+
+        /* ===== Border ===== */
+        --border-color: #2D3A55;    /* Cards, Inputs, Separator Border */
+        
+        /* ===== Shadows ===== */
+        --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.4);
+        --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.5), 0 0 12px rgba(37, 99, 235, 0.2);
+        --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.6), 0 0 20px rgba(37, 99, 235, 0.15);
+        --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.7), 0 0 30px rgba(37, 99, 235, 0.1);
+        --shadow-hover: 0 12px 24px rgba(0, 0, 0, 0.6), 0 0 20px rgba(37, 99, 235, 0.25);
+        
+        /* ===== Notice ===== */
+        --color-success: #4ADE80;   /* Success Color */
+        --color-warning: #FBBF24;   /* Warning Color */
+        --color-error: #F87171;     /* Error Color */
+    }
+
+    /* ===== Font Family ===== */
+    --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+    --font-mono: 'Fira Code', 'JetBrains Mono', 'Cascadia Code', Consolas, 'Courier New', monospace;
+
+    /* ===== Extra ===== */
     --radius: 10px;
     --transition: 0.3s ease;
 }
@@ -26,6 +77,71 @@ html {
 
 body {
     background: var(--primary-bg);
-    color: var(--secondary-text);
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: var(--text-color);
+    font-family: var(--font-sans);
+}
+
+/* ========================================================== Theme Toggle ========================================================== */
+body.dark-mode .icon-moon,
+.icon-sun {
+    display: block;
+}
+
+body.dark-mode .icon-sun,
+.icon-moon {
+    display: none;
+}
+
+.theme-toggle .icon {
+    padding: 1rem;
+}
+
+.theme-toggle {
+    position: fixed;
+    bottom: 3rem;
+    right: 3rem;
+
+    width: 5rem;
+    height: 5rem;
+    border-radius: 100%;
+
+    background: var(--heading-color);
+    color: var(--btn-text-color);
+    box-shadow: var(--shadow-sm);
+    border: 0.5rem solid var(--border-color);
+    transition: var(--transition);
+}
+
+.theme-toggle:hover {
+    background: var(--hover-color);
+    transform: scale(1.2);
+}
+
+/* ========================================================== Header ========================================================== */
+header {
+    background: var(--secondary-bg);
+    box-shadow: var(--shadow-sm);
+    padding: 1rem;
+}
+.navbar ul {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    list-style: none;
+}
+
+.nav-link {
+    color: var(--heading-color);
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.8rem;
+    transition: var(--transition);
+}
+
+.nav-link:hover {
+    color: var(--hover-color);
+}
+
+.navbar li:first-child {
+    margin-right: auto;
 }
