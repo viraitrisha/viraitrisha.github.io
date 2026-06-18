@@ -1,0 +1,81 @@
+:root {
+    /* ===== BACKGROUND ===== */
+    --primary-bg: #FAFAFC;          /* Main Background Color */
+    --secondary-bg: #E7E7FF;        /* Header, Footer & Cards Color */
+
+    /* ===== TEXT ===== */
+    --header-color: #2D2A4A;        /* Headings Color */
+    --text-color: #1B1A2E;          /* Primary Text Color */
+    --subtext-color: #5D5A6E;       /* Subtext Color */
+    --accent-color: #56418C;        /* Accent Color */
+
+    /* ===== INTERACTIVE ===== */
+    --link-color: #56418C;          /* Link Color */
+    --link-hover: #433175;          /* Link Hover Color */
+    --btn-bg: #56418C;              /* Btn Color */
+    --btn-bg-hover: #433175;        /* Btn Hover Color */
+    --btn-text: #FFFFFF;            /* Btn Text Color */
+    --btn-outline: #56418C;         /* Btn Outline Color */
+    --btn-outline-hover: #433175;   /* Btn Outline Hover Color */
+
+    /* ===== SHADOWS ===== */
+    --shadow-sm: 0 2px 8px rgba(86, 65, 140, 0.06);
+    --shadow-md: 4px 6px 18px rgba(86, 65, 140, 0.08);
+
+    /* ===== SYSTEM ===== */
+    --success: #2E7D5B;
+    --warning: #B85C3A;
+
+    /* ===== EXTRA ===== */
+    --transition: all 0.3s ease;
+}
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background: var(--primary-bg);
+    color: var(--text-color);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* ==================== THEME TOGGLE ==================== */
+button {
+    background: #2E7D5B;
+}
+
+/* ==================== HEADER ==================== */
+header {
+    background: var(--secondary-bg);
+    box-shadow: var(--shadow-md);
+    padding: 1rem;
+    position: sticky;
+    width: 100%;
+}
+
+.navigation {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.nav-link:first-child {
+    margin-right: auto;
+    font-size: 1.5rem;
+}
+
+.nav-link {
+    color: var(--link-color);
+    font-weight: bolder;
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.nav-link:hover {
+    color: var(--link-hover);
+}
+
+/* ==================== FOOTER ==================== */
