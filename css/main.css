@@ -1,33 +1,17 @@
 :root {
-    /* ===== BACKGROUND ===== */
-    --primary-bg: #FAFAFC;          /* Main Background Color */
-    --secondary-bg: #E7E7FF;        /* Header, Footer & Cards Color */
+    --primary-color: #0B1A33;       /* Nav/Foot, Primary BG, Heading, Btn BG */
+    --secondary-color: #E8ECF1;     /* Secondary BG, Nav/Foot Text, Primary BG Heading */
 
-    /* ===== TEXT ===== */
-    --header-color: #2D2A4A;        /* Headings Color */
-    --text-color: #1B1A2E;          /* Primary Text Color */
-    --subtext-color: #5D5A6E;       /* Subtext Color */
-    --accent-color: #56418C;        /* Accent Color */
+    --primary-text: #F0F4FA;        /* Primary BG Text */
+    --secondary-text: #2D3748;      /* Secondary BG Text */
 
-    /* ===== INTERACTIVE ===== */
-    --link-color: #56418C;          /* Link Color */
-    --link-hover: #433175;          /* Link Hover Color */
-    --btn-bg: #56418C;              /* Btn Color */
-    --btn-bg-hover: #433175;        /* Btn Hover Color */
-    --btn-text: #FFFFFF;            /* Btn Text Color */
-    --btn-outline: #56418C;         /* Btn Outline Color */
-    --btn-outline-hover: #433175;   /* Btn Outline Hover Color */
-
-    /* ===== SHADOWS ===== */
-    --shadow-sm: 0 2px 8px rgba(86, 65, 140, 0.06);
-    --shadow-md: 4px 6px 18px rgba(86, 65, 140, 0.08);
-
-    /* ===== SYSTEM ===== */
-    --success: #2E7D5B;
-    --warning: #B85C3A;
+    --accent-color: #1E4D8C;        /* Links, Icons, Highlights */
+    --primary-focus: #A0C4F0;       /* Hover on Primary BG */
+    --secondary-focus: #2B6CB0;     /* Hover on Secondary BG */
 
     /* ===== EXTRA ===== */
     --transition: all 0.3s ease;
+    --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
 }
 
 * {
@@ -37,23 +21,51 @@
 }
 
 body {
-    background: var(--primary-bg);
-    color: var(--text-color);
+    background: var(--primary-color);
+    color: var(--primary-text);
     font-family: Arial, Helvetica, sans-serif;
+    border: 1rem solid var(--primary-color);
 }
 
 /* ==================== THEME TOGGLE ==================== */
-button {
-    background: #2E7D5B;
+.theme-toggle {
+    position: fixed;
+    bottom: 3rem;
+    right: 3rem;
+    padding: 1rem;
+    z-index: 999;
+    background: var(--accent-color);
+    color: var(--primary-text);
+    border: 0.2rem solid rgba(255, 255, 255, 0.15);
+    box-shadow: var(--box-shadow);
+    border-radius: 100%;
+    font-size: 1.5rem;
+    transition: var(--transition);
+}
+
+.theme-toggle:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 30px rgba(30, 77, 140, 0.7);
+    border-color: var(--primary-focus);
+}
+
+.icon-sun {
+    display: inline-block !important;
+}
+
+.icon-moon {
+    display: none !important;
 }
 
 /* ==================== HEADER ==================== */
 header {
-    background: var(--secondary-bg);
-    box-shadow: var(--shadow-md);
+    background: var(--primary-color);
     padding: 1rem;
-    position: sticky;
+    position: absolute;
     width: 100%;
+    z-index: 1000;
+    top: 0;
+    left: 0;
 }
 
 .navigation {
@@ -62,20 +74,86 @@ header {
     gap: 2rem;
 }
 
+.nav-link {
+    color: var(--secondary-color);
+    font-weight: bolder;
+    text-decoration: none;
+    transition: var(--transition);
+    position: relative;
+}
+
 .nav-link:first-child {
     margin-right: auto;
     font-size: 1.5rem;
 }
 
-.nav-link {
-    color: var(--link-color);
-    font-weight: bolder;
-    text-decoration: none;
+.nav-link:first-child:hover {
+    color: var(--primary-focus);
+}
+
+.nav-link:not(:first-child)::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--primary-focus);
+    border-radius: 5px;
     transition: var(--transition);
 }
 
-.nav-link:hover {
-    color: var(--link-hover);
+.nav-link:not(:first-child):hover::after {
+    width: 100%;
 }
 
+.nav-link:not(:first-child):hover {
+    color: var(--primary-focus);
+}
 /* ==================== FOOTER ==================== */
+
+/* ==================== HERO SECTION ==================== */
+.hero {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    overflow: visible;
+    background: var(--secondary-color);
+    border-radius: 5rem;
+    margin-top: 3rem;
+}
+
+.hero canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+    display: block;
+    border-radius: 5rem;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 2;
+    background: radial-gradient(ellipse at center, rgba(11, 26, 51, 0.30) 0%, rgba(11, 26, 51, 0.70) 100%);
+    pointer-events: none;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 3;
+    display: flex;
+}
+
+.about-me {
+    height: 100vh;
+    background: var(--secondary-color);
+    border-top: 1rem solid var(--primary-color);
+    border-radius: 5rem;
+}
