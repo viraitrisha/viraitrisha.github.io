@@ -3,56 +3,96 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-        <link rel="stylesheet" href="/css/main.css">
         <title>V's Portfolio</title>
-        <link rel="icon" type="image/x-icon" href="/img/favicon.ico">
+        <link rel="stylesheet" href="/css/main.css">
+        <link type="image/x-icon" rel="icon" href="/img/favicon.ico">
+        <link href="https://fonts.googleapis.com/css2?family=Inter:opsz@14..32&display=swap" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=Krona+One&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     </head>
-
     <body>
         <header>
-            <nav class="navigation">
-                <a href="/" class="nav-link">Vanshika Trilok</a>
-                <a href="/" class="nav-link">Home</a>
-                <a href="/html/about.html" class="nav-link">About</a>
-                <a href="/html/work.html" class="nav-link">Work</a>
-                <a href="/html/contact.html" class="nav-link">Contact</a>
-            </nav>
+            <img src="/img/portfolio_logo.png" alt="V's Portfolio Logo" class="logo">
+            <a href="/" class="nav-link">Home</a>
+            <a href="/html/about.html" class="nav-link">About</a>
+            <a href="/html/work.html" class="nav-link">Works</a>
+            <button id="contact-button">
+                Contact Me
+                <span class="arrow-circle"> →</span>
+            </button>
         </header>
 
-        <!------------------------------------- THEME TOGGLE ------------------------------------->
-        <div>
-            <button class="theme-toggle" id="themeToggle" aria-label="theme toggle">
-                <i class="fa-regular fa-sun icon-sun"></i>
-                <i class="fa-regular fa-moon icon-moon"></i>
-            </button>
-        </div>
+        <main class="hero-section">
 
-        <!------------------------------------- HERO SECTION ------------------------------------->
-        <main class="hero" id="hero">
+            <!-- CANVAS -->
             <canvas id="heroCanvas" aria-hidden="true"></canvas>
-            <div class="hero-overlay"></div>
-            <div class="hero-content">
+
+            <div class="hero-container">
+                <!-- LEFT SIDE -->
                 <div class="hero-image">
-                    <img src="https://placehold.co/600x400?text=My+Image" alt="my image">
+                    <img src="https://placehold.co/600x400" alt="My Image" class="hero-img">
                 </div>
-                <div class="hero-text">
+
+                <!-- RIGHT SIDE -->
+                <div class="hero-content">
                     <h1>
-                        Hi,<br/>
-                        I'm Vanshika
+                        <i>Hi,</i> <br>
+                        I'm <span class="highlight">Vanshika</span>
                     </h1>
-                    <p>Aspiring Fullstack Developer</p>
-                </div>
-                <div class="cta-btn">
-                    <button class="view-projects-btn">View My Projects</button>
+                    <h2>
+                        <span id="typing-text"></span>
+                        <span class="cursor" aria-hidden="true">|</span>
+                    </h2>
+                    <p>Building digital solutions from frontend to backend | 2nd year Software Engineering student</p>
                 </div>
             </div>
         </main>
 
-        <section class="about-me">
-            
+        <section class="about-section">
+            <h2>About Me</h2>
+            <p>I'm a 19-year-old Software Engineering student at UNASAT with a passion for building fullstack web applications. Currently, I'm diving deep into modern backend technologies while maintaining a love for clean, responsive frontend design. My journey started with HTML & CSS, and now I'm comfortable across the full stack — from React interfaces to PostgreSQL databases. When I'm not coding, you'll find me lost in a novel or exploring open-world games.</p>
+            <a href="/html/about.html" class="btn-about">More about me →</a>
         </section>
 
+        <section class="works-section">
+            <h2>Recent Works</h2>
+            <div class="works-container">
+                <div class="work-card">
+                    <img src="https://placehold.co/300x200" alt="WeatherWise" class="work-image">
+                    <h3>WeatherWise</h3>
+                    <p>A brief description of WeatherWise.</p>
+                </div>
+                <div class="work-card">
+                    <img src="https://placehold.co/300x200" alt="SuriHealth" class="work-image">
+                    <h3>SuriHealth</h3>
+                    <p>A brief description of SuriHealth.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="contact-section">
+            <h2>Contact Me</h2>
+            <form id="contact-form">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" placeholder="Your Name" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="Your Email" required>
+
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="5" placeholder="Your Message" required></textarea>
+
+                <button type="submit">Send Message</button>
+            </form>
+        </section>
+
+        <footer>
+            <p>&copy; 2026 Vanshika Trilok. All rights reserved.</p>
+            <a href="https://github.com/viraitrisha" rel="noopener noreferrer" target="_blank">
+                <i class="fa-brands fa-square-github"></i>
+            </a>
+        </footer>
         <script src="/js/main.js"></script>
+
     </body>
 </html>
