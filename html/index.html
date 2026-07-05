@@ -128,34 +128,96 @@
             <h2>Recent Works</h2>
             <div class="works-container">
                 <div class="work-card">
-                    <img src="https://placehold.co/300x200" alt="WeatherWise" class="work-image">
-                    <h3>WeatherWise</h3>
-                    <p>A brief description of WeatherWise.</p>
+                    <img src="https://placehold.co/600x400" alt="WeatherWise" class="work-image">
+                    <div class="work-info">
+                        <h3>WeatherWise</h3>
+                        <p>Live anywhere, feel the sky — a real-time weather dashboard that travels with you. Get current conditions, local time, and micro‑climate insights for any city in the world.</p>
+                        <div class="work-tools">
+                            <span class="tool-tag">HTML</span>
+                            <span class="tool-tag">CSS</span>
+                            <span class="tool-tag">JavaScript</span>
+                        </div>
+                        <a href="https://github.com/viraitrisha/WeatherWise" target="_blank" rel="noopener noreferrer" class="work-link">
+                            <i class="fa-brands fa-square-github"></i> View Code
+                        </a>
+                    </div>
                 </div>
+
                 <div class="work-card">
-                    <img src="https://placehold.co/300x200" alt="SuriHealth" class="work-image">
-                    <h3>SuriHealth</h3>
-                    <p>A brief description of SuriHealth.</p>
+                    <img src="https://placehold.co/600x400" alt="SuriHealth V1" class="work-image">
+                    <div class="work-info">
+                        <h3>SuriHealth V1</h3>
+                        <p>A meal-planner that helps users create healthy weekly menus based on preferences and generate shopping lists.</p>
+                        <div class="work-tools">
+                            <span class="tool-tag">HTML</span>
+                            <span class="tool-tag">CSS</span>
+                            <span class="tool-tag">JavaScript</span>
+                            <span class="tool-tag">Node.js</span>
+                            <span class="tool-tag">Express</span>
+                            <span class="tool-tag">Prisma</span>
+                        </div>
+                        <a href="https://github.com/viraitrisha/Surihealth-Old" target="_blank" rel="noopener noreferrer" class="work-link">
+                            <i class="fa-brands fa-square-github"></i> View Code
+                        </a>
+                    </div>
+                </div>
+
+                <div class="work-card featured">
+                    <span class="current-badge">Current Project</span>
+                    <img src="https://placehold.co/600x400" alt="SuriHealth V2" class="work-image">
+                    <div class="work-info">
+                        <h3>SuriHealth V2</h3>
+                        <p>Complete rebuild using a modern, fully type-safe stack. I'm handling the entire backend — from authentication to database schema — to deliver a production-ready API.</p>
+                        <div class="work-tools">
+                            <span class="tool-tag">TanStack Start</span>
+                            <span class="tool-tag">React</span>
+                            <span class="tool-tag">Tailwind</span>
+                            <span class="tool-tag">Vite</span>
+                            <span class="tool-tag">Better Auth</span>
+                            <span class="tool-tag">Zod</span>
+                            <span class="tool-tag">Hono</span>
+                            <span class="tool-tag">Drizzle</span>
+                            <span class="tool-tag">PostgreSQL</span>
+                        </div>
+                        <a href="https://github.com/viraitrisha/surihealth" target="_blank" rel="noopener noreferrer" class="work-link">
+                            <i class="fa-brands fa-square-github"></i> View Code
+                        </a>
+                    </div>
                 </div>
             </div>
         </section>
 
         <section class="contact-section">
             <h2>Contact Me</h2>
-            <form id="contact-form">
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" placeholder="Your Name" required>
+            <div class="contact-container">
+                <!-- LEFT SIDE -->
+                <form id="contact-form" class="contact-form">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" placeholder="Your Email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="5" placeholder="Your Message" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Send Message →</button>
+                </form>
 
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" placeholder="Your Email" required>
-
-                <label for="message">Message:</label>
-                <textarea id="message" name="message" rows="5" placeholder="Your Message" required></textarea>
-
-                <button type="submit">Send Message</button>
-            </form>
+                <!-- RIGHT SIDE -->
+                <div class="lightbulp">
+                    <button id="theme-toggle" class="bulb-btn" aria-label="Toggle light mode">
+                        <i class="fa-solid fa-lightbulb bulb-on"></i>
+                        <i class="fa-regular fa-lightbulb bulb-off"></i>
+                    </button>
+                    <p class="bulb-hint">Click the bulb 💡</p>
+                </div>
+            </div>
         </section>
-
+        
         <footer>
             <p>&copy; 2026 Vanshika Trilok. All rights reserved.</p>
             <a href="https://github.com/viraitrisha" rel="noopener noreferrer" target="_blank">

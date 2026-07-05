@@ -145,3 +145,7 @@ document.querySelector('.logo').addEventListener('click', () => {
 
     type();
 })();
+
+// ==========
+// LIGHT BULP TOGGLE
+// ==========
