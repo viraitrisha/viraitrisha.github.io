@@ -23,7 +23,6 @@
         </header>
 
         <main class="hero-section">
-
             <!-- CANVAS -->
             <canvas id="heroCanvas" aria-hidden="true"></canvas>
 
@@ -49,9 +48,80 @@
         </main>
 
         <section class="about-section">
-            <h2>About Me</h2>
-            <p>I'm a 19-year-old Software Engineering student at UNASAT with a passion for building fullstack web applications. Currently, I'm diving deep into modern backend technologies while maintaining a love for clean, responsive frontend design. My journey started with HTML & CSS, and now I'm comfortable across the full stack — from React interfaces to PostgreSQL databases. When I'm not coding, you'll find me lost in a novel or exploring open-world games.</p>
-            <a href="/html/about.html" class="btn-about">More about me →</a>
+            <div class="about-container">
+                <!-- LEFT SIDE -->
+                <div class="about-text">
+                    <h2>About Me</h2>
+                    
+                    <p class="intro-text">
+                        I'm a 19-year-old Software Engineering student at UNASAT with a deep passion for building fullstack web applications. 
+                        My journey started with HTML & CSS and has evolved into a strong command over modern frameworks like React and Tailwind 
+                        on the frontend, and Node.js, Hono, and PostgreSQL on the backend. I thrive on solving complex problems and writing 
+                        clean, maintainable code.
+                    </p>
+
+                    <div class="current-focus">
+                        <span class="highlight">CURRENT FOCUS</span>
+                        <p class="focus-text">
+                            I'm currently modernizing <a href="https://github.com/viraitrisha/surihealth" target="_blank" rel="noopener noreferrer"><b>SuriHealth</b></a>, a full-stack meal planner. I am solely handling the 
+                            backend rebuild using <b>Hono</b>, <b>Drizzle ORM</b>, <b>Zod</b>, and <b>Better Auth</b> to make it fully type-safe and production-ready.
+                        </p>
+                    </div>
+
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <span class="stat-number">19</span>
+                            <span class="stat-label">Years Old</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">2+</span>
+                            <span class="stat-label">Projects Built</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">2nd</span>
+                            <span class="stat-label">Year SE Student</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">2</span>
+                            <span class="stat-label">Languages (NL/EN)</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- RIGHT SIDE -->
+                <div class="about-img-wrapper">
+                    <img src="https://placehold.co/400x400" alt="About Me Image" class="about-img">
+
+                    <div class="skills-tl">
+                        <a href="https://react.dev/" target="_blank" rel="noopener noreferrer">
+                            <i class="fa-brands fa-react"></i>
+                        </a>
+                    </div>
+                    
+                    <div class="skills-tr">
+                        <a href="https://better-auth.com/" target="_blank" rel="noopener noreferrer">
+                            <i class="fa-solid fa-lock"></i>
+                        </a>
+                    </div>
+                    
+                    <div class="skills-bl">
+                        <a href="https://www.postgresql.org/" target="_blank" rel="noopener noreferrer">
+                            <i class="fa-solid fa-database"></i>
+                        </a>
+                    </div>
+                    
+                    <div class="skills-br">
+                        <a href="https://hono.dev/" target="_blank" rel="noopener noreferrer">
+                            <i class="fa-solid fa-fire"></i>
+                        </a>
+                    </div>                    
+
+                    <button id="about-button" class="about-btn">
+                        More About Me
+                        <span class="arrow-circle"> →</span>
+                    </button>
+                </div>
+            </div>
         </section>
 
         <section class="works-section">
@@ -92,6 +162,7 @@
                 <i class="fa-brands fa-square-github"></i>
             </a>
         </footer>
+
         <script src="/js/main.js"></script>
 
     </body>
