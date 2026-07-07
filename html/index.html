@@ -188,32 +188,35 @@
         </section>
 
         <section class="contact-section">
-            <h2>Contact Me</h2>
             <div class="contact-container">
                 <!-- LEFT SIDE -->
-                <form id="contact-form" class="contact-form">
-                    <div class="form-group">
-                        <label for="name">Name</label>
-                        <input type="text" id="name" name="name" placeholder="Your Name" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="email" id="email" name="email" placeholder="Your Email" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="message">Message</label>
-                        <textarea id="message" name="message" rows="5" placeholder="Your Message" required></textarea>
-                    </div>
-                    <button type="submit" class="submit-btn">Send Message →</button>
-                </form>
+                <div class="contact-form-wrapper">
+                    <h2>Contact Me</h2>
+                    <form id="contact-form">
+                        <div class="input-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" placeholder="Your Name" required>
+                        </div>
+                        <div class="input-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" placeholder="Your Email" required>
+                        </div>
+                        <div class="input-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="5" placeholder="Your Message" required></textarea>
+                        </div>
+                        <button type="submit" class="send-btn">
+                            Send Message
+                            <span class="arrow-circle"> →</span>
+                        </button>
+                    </form>
+                </div>
 
                 <!-- RIGHT SIDE -->
-                <div class="lightbulp">
-                    <button id="theme-toggle" class="bulb-btn" aria-label="Toggle light mode">
-                        <i class="fa-solid fa-lightbulb bulb-on"></i>
-                        <i class="fa-regular fa-lightbulb bulb-off"></i>
-                    </button>
-                    <p class="bulb-hint">Click the bulb 💡</p>
+                <div class="contact-theme-toggle">
+                    <p class="toggle-hint">Need some light?</p>
+                    <i id="theme-bulb" class="fa-regular fa-lightbulb"></i>
+                    <span class="toggle-label">Click to brighten</span>
                 </div>
             </div>
         </section>

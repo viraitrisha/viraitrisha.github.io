@@ -149,3 +149,28 @@ document.querySelector('.logo').addEventListener('click', () => {
 // ==========
 // LIGHT BULP TOGGLE
 // ==========
+(function() {
+    const bulb = document.getElementById('theme-bulb');
+    const body = document.body;
+
+    const savedTheme = localStorage.getItem('portfolio-theme');
+    if (savedTheme === 'light') {
+        body.classList.add('light-mode');
+        bulb.classList.remove('fa-regular');
+        bulb.classList.add('fa-solid');
+    }
+
+    bulb.addEventListener('click', () => {
+        const isLight = body.classList.toggle('light-mode');
+        
+        if (isLight) {
+        bulb.classList.remove('fa-regular');
+        bulb.classList.add('fa-solid');
+        localStorage.setItem('portfolio-theme', 'light');
+        } else {
+        bulb.classList.remove('fa-solid');
+        bulb.classList.add('fa-regular');
+        localStorage.setItem('portfolio-theme', 'dark');
+        }
+    });
+})();
