@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>V's Portfolio</title>
+        <link rel="stylesheet" href="/css/main.css">
+        <link rel="stylesheet" href="/css/contact.css">
+        <link type="image/x-icon" rel="icon" href="/img/favicon.ico">
+        <link href="https://fonts.googleapis.com/css2?family=Inter:opsz@14..32&display=swap" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=Krona+One&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    </head>
+    <body>
+        <header>
+            <img src="/img/portfolio_logo.png" alt="V's Portfolio Logo" class="logo">
+            <a href="/" class="nav-link active">Home</a>
+            <a href="/html/about.html" class="nav-link active">About</a>
+            <a href="/html/work.html" class="nav-link active">Works</a>
+            <button id="contact-btn">
+                Contact Me
+                <span class="arrow-circle"> →</span>
+            </button>
+        </header>
+
+        <main class="hero-section">
+            <!-- CANVAS -->
+            <canvas id="heroCanvas" aria-hidden="true"></canvas>
+
+            <div class="hero-container">
+                <!-- LEFT SIDE -->
+                <div class="hero-image">
+                    <img src="https://placehold.co/600x400" alt="My Image" class="hero-img">
+                </div>
+
+                <!-- RIGHT SIDE -->
+                <div class="hero-content">
+                    <h1>
+                        <i>Hi,</i> <br>
+                        I'm <span class="highlight">Vanshika</span>
+                    </h1>
+                    <h2>
+                        <span id="typing-text"></span>
+                        <span class="cursor" aria-hidden="true">|</span>
+                    </h2>
+                    <p>Building digital solutions from frontend to backend | 2nd year Software Engineering student</p>
+                </div>
+            </div>
+        </main>
+
+        <section class="about-section">
+            <div class="about-container">
+                <!-- LEFT SIDE -->
+                <div class="about-text">
+                    <h2>About Me</h2>
+                    
+                    <p class="intro-text">
+                        I'm a 19-year-old Software Engineering student at UNASAT with a deep passion for building fullstack web applications. 
+                        My journey started with HTML & CSS and has evolved into a strong command over modern frameworks like React and Tailwind 
+                        on the frontend, and Node.js, Hono, and PostgreSQL on the backend. I thrive on solving complex problems and writing 
+                        clean, maintainable code.
+                    </p>
+
+                    <div class="current-focus">
+                        <span class="highlight">CURRENT FOCUS</span>
+                        <p class="focus-text">
+                            I'm currently modernizing <a href="https://github.com/viraitrisha/surihealth" target="_blank" rel="noopener noreferrer"><b>SuriHealth</b></a>, a full-stack meal planner. I am solely handling the 
+                            backend rebuild using <b>Hono</b>, <b>Drizzle ORM</b>, <b>Zod</b>, and <b>Better Auth</b> to make it fully type-safe and production-ready.
+                        </p>
+                    </div>
+
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <span class="stat-number">19</span>
+                            <span class="stat-label">Years Old</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">2+</span>
+                            <span class="stat-label">Projects Built</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">2nd</span>
+                            <span class="stat-label">Year SE Student</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">2</span>
+                            <span class="stat-label">Languages (NL/EN)</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- RIGHT SIDE -->
+                <div class="about-img-wrapper">
+                    <img src="https://placehold.co/400x400" alt="About Me Image" class="about-img">
+
+                    <div class="skills-tl">
+                        <a href="https://react.dev/" target="_blank" rel="noopener noreferrer">
+                            <i class="fa-brands fa-react"></i>
+                        </a>
+                    </div>
+                    
+                    <div class="skills-tr">
+                        <a href="https://better-auth.com/" target="_blank" rel="noopener noreferrer">
+                            <i class="fa-solid fa-lock"></i>
+                        </a>
+                    </div>
+                    
+                    <div class="skills-bl">
+                        <a href="https://www.postgresql.org/" target="_blank" rel="noopener noreferrer">
+                            <i class="fa-solid fa-database"></i>
+                        </a>
+                    </div>
+                    
+                    <div class="skills-br">
+                        <a href="https://hono.dev/" target="_blank" rel="noopener noreferrer">
+                            <i class="fa-solid fa-fire"></i>
+                        </a>
+                    </div>                    
+
+                    <button id="about-btn" class="about-btn">
+                        More About Me
+                        <span class="arrow-circle"> →</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <section class="works-section">
+            <h2>Recent Works</h2>
+            <div class="works-container">
+                <div class="work-card">
+                    <img src="https://placehold.co/600x400" alt="WeatherWise" class="work-image">
+                    <div class="work-info">
+                        <h3>WeatherWise</h3>
+                        <p>Live anywhere, feel the sky — a real-time weather dashboard that travels with you. Get current conditions, local time, and micro‑climate insights for any city in the world.</p>
+                        <div class="work-tools">
+                            <span class="tool-tag">HTML</span>
+                            <span class="tool-tag">CSS</span>
+                            <span class="tool-tag">JavaScript</span>
+                        </div>
+                        <a href="https://github.com/viraitrisha/WeatherWise" target="_blank" rel="noopener noreferrer" class="work-link">
+                            <i class="fa-brands fa-square-github"></i> View Code
+                        </a>
+                    </div>
+                </div>
+
+                <div class="work-card">
+                    <img src="https://placehold.co/600x400" alt="SuriHealth V1" class="work-image">
+                    <div class="work-info">
+                        <h3>SuriHealth V1</h3>
+                        <p>A meal-planner that helps users create healthy weekly menus based on preferences and generate shopping lists.</p>
+                        <div class="work-tools">
+                            <span class="tool-tag">HTML</span>
+                            <span class="tool-tag">CSS</span>
+                            <span class="tool-tag">JavaScript</span>
+                            <span class="tool-tag">Node.js</span>
+                            <span class="tool-tag">Express</span>
+                            <span class="tool-tag">Prisma</span>
+                        </div>
+                        <a href="https://github.com/viraitrisha/Surihealth-Old" target="_blank" rel="noopener noreferrer" class="work-link">
+                            <i class="fa-brands fa-square-github"></i> View Code
+                        </a>
+                    </div>
+                </div>
+
+                <div class="work-card featured">
+                    <span class="current-badge">Current Project</span>
+                    <img src="https://placehold.co/600x400" alt="SuriHealth V2" class="work-image">
+                    <div class="work-info">
+                        <h3>SuriHealth V2</h3>
+                        <p>Complete rebuild using a modern, fully type-safe stack. I'm handling the entire backend — from authentication to database schema — to deliver a production-ready API.</p>
+                        <div class="work-tools">
+                            <span class="tool-tag">TanStack Start</span>
+                            <span class="tool-tag">React</span>
+                            <span class="tool-tag">Tailwind</span>
+                            <span class="tool-tag">Vite</span>
+                            <span class="tool-tag">Better Auth</span>
+                            <span class="tool-tag">Zod</span>
+                            <span class="tool-tag">Hono</span>
+                            <span class="tool-tag">Drizzle</span>
+                            <span class="tool-tag">PostgreSQL</span>
+                        </div>
+                        <a href="https://github.com/viraitrisha/surihealth" target="_blank" rel="noopener noreferrer" class="work-link">
+                            <i class="fa-brands fa-square-github"></i> View Code
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="contact-section">
+            <div class="contact-container">
+                <!-- LEFT SIDE -->
+                <div class="contact-form-wrapper">
+                    <h2>Contact Me</h2>
+                    <form id="contact-form">
+                        <div class="input-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" placeholder="Your Name" required>
+                        </div>
+                        <div class="input-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" placeholder="Your Email" required>
+                        </div>
+                        <div class="input-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="5" placeholder="Your Message" required></textarea>
+                        </div>
+                        <button type="submit" class="send-btn">
+                            Send Message
+                            <span class="arrow-circle"> →</span>
+                        </button>
+                    </form>
+                </div>
+
+                <!-- RIGHT SIDE -->
+                <div class="contact-theme-toggle">
+                    <p class="toggle-hint">Need some light?</p>
+                    <i id="theme-bulb" class="fa-regular fa-lightbulb"></i>
+                    <span class="toggle-label">Click to brighten</span>
+                </div>
+            </div>
+        </section>
+        
+        <footer>
+            <p>&copy; 2026 Vanshika Trilok. All rights reserved.</p>
+            <a href="https://github.com/viraitrisha" rel="noopener noreferrer" target="_blank">
+                <i class="fa-brands fa-square-github"></i>
+            </a>
+        </footer>
+
+        <script src="/js/main.js"></script>
+
+    </body>
+</html>
