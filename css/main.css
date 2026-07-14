@@ -148,7 +148,8 @@ h3 {
 
 /* ========== BUTTONS ========== */
 .about-btn,
-#contact-btn {
+#contact-btn,
+.home-contact-btn {
     display: inline-flex;
     align-items: center;
     white-space: nowrap;
@@ -169,12 +170,14 @@ h3 {
     margin-left: auto;
 }
 
-.about-btn {
+.about-btn,
+.home-contact-btn {
     padding: 0.7rem 1.5rem;
 }
 
 .about-btn .arrow-circle,
-#contact-btn .arrow-circle {
+#contact-btn .arrow-circle,
+.home-contact-btn .arrow-circle {
     position: absolute;
     right: -1.5rem;
     top: 50%;
@@ -195,13 +198,15 @@ h3 {
 }
 
 .about-btn:hover,
-#contact-btn:hover {
+#contact-btn:hover,
+.home-contact-btn:hover {
     background: var(--cta-hover);
     box-shadow: var(--btn-shadow);
     transform: translateY(-1px) scale(1.03);
 }
 
-#contact-btn:hover {
+#contact-btn:hover,
+.home-contact-btn:hover {
     padding-right: 2.5rem;
 }
 
@@ -210,30 +215,28 @@ h3 {
 }
 
 .about-btn:hover .arrow-circle,
-#contact-btn:hover .arrow-circle {
+#contact-btn:hover .arrow-circle,
+.home-contact-btn:hover .arrow-circle {
     right: 0.5rem;
     opacity: 1;
 }
 
 .about-btn::after,
-#contact-btn::after {
+#contact-btn::after,
+.home-contact-btn::after {
     content: "";
     position: absolute;
     top: 0;
     left: -100%;
     width: 100%;
     height: 100%;
-    background: linear-gradient(
-        90deg,
-        transparent,
-        rgba(255, 255, 255, 0.15),
-        transparent
-    );
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.15), transparent);
     transition: left 0.5s ease;
 }
 
 .about-btn:hover::after,
-#contact-btn:hover::after {
+#contact-btn:hover::after,
+.home-contact-btn:hover::after {
     left: 100%;
 }
 
@@ -481,7 +484,6 @@ footer a:hover {
 }
 
 .intro-text {
-    font-size: 1.05rem;
     line-height: 1.8;
     color: var(--secondary-text);
     margin-bottom: 2rem;
@@ -634,7 +636,7 @@ footer a:hover {
     color: var(--primary-text);
     font-family: 'JetBrains Mono', 'Fira Code', monospace;
     font-size: 0.85rem;
-    padding: 0.4rem 0.9rem;
+    padding: 0.4rem 0.8rem;
     border-radius: 12px;
     border: 1px solid var(--accent);
     opacity: 0;
@@ -691,7 +693,7 @@ footer a:hover {
 
 .work-card {
     background: var(--card);
-    border: 1px solid rgba(65, 211, 190, 0.15);
+    border: var(--faint-border);
     border-radius: 1.5rem;
     overflow: hidden;
     display: flex;
@@ -810,12 +812,7 @@ footer a:hover {
     left: -100%;
     width: 100%;
     height: 100%;
-    background: linear-gradient(
-        90deg,
-        transparent,
-        rgba(255, 255, 255, 0.25),
-        transparent
-    );
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.25), transparent);
     transition: left 0.6s ease;
     z-index: 1;
     pointer-events: none;
@@ -927,71 +924,6 @@ footer a:hover {
 .contact-container p {
     color: var(--secondary-text);
     margin-bottom: 2rem;
-}
-
-.home-contact-btn {
-    display: inline-flex;
-    align-items: center;
-    white-space: nowrap;
-    position: relative;
-    overflow: hidden;
-    padding: 0.8rem 2rem;
-    border-radius: 5rem;
-    font-family: 'Krona One', sans-serif;
-    font-weight: bold;
-    font-size: 1.1rem;
-    background: var(--cta-btn);
-    color: var(--primary-text);
-    border: none;
-    cursor: pointer;
-    transition: var(--transition), padding-right 0.3s ease;
-}
-
-.home-contact-btn .arrow-circle {
-    position: absolute;
-    right: -1.5rem;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 1.5rem;
-    height: 1.5rem;
-    border-radius: 50%;
-    background: var(--accent);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--background);
-    font-size: 1rem;
-    font-weight: bold;
-    line-height: 1;
-    opacity: 0;
-    transition: right 0.45s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease 0.1s;
-}
-
-.home-contact-btn:hover {
-    background: var(--cta-hover);
-    box-shadow: var(--btn-shadow);
-    transform: translateY(-2px) scale(1.03);
-    padding-right: 3rem;
-}
-
-.home-contact-btn:hover .arrow-circle {
-    right: 0.8rem;
-    opacity: 1;
-}
-
-.home-contact-btn::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
-    transition: left 0.6s ease;
-}
-
-.home-contact-btn:hover::after {
-    left: 100%;
 }
 
 .bulb-field {
