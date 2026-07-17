@@ -1,0 +1,178 @@
+/* ========== ABOUT PAGE LAYOUT ========== */
+.about-page {
+    padding: 8rem;
+    padding-bottom: 4rem;
+}
+
+.section-title {
+    font-size: 2.2rem;
+    margin-bottom: 2.5rem;
+    text-align: center;
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background: var(--accent);
+    margin: 0.8rem auto 0;
+    border-radius: 2px;
+}
+
+/* ---------- PROFILE HERO ---------- */
+.profile-hero {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    margin-bottom: 5rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.profile-intro {
+    flex: 1;
+    min-width: 280px;
+}
+
+.profile-intro h2 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.profile-tagline {
+    font-size: 1.1rem;
+    color: var(--accent);
+    margin-bottom: 1.2rem;
+    font-weight: bold;
+}
+
+.profile-bio {
+    color: var(--secondary-text);
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+}
+
+.fun-fact-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    background: transparent;
+    border: 1px solid var(--accent);
+    color: var(--accent);
+    font-weight: bold;
+    font-family: 'Krona One', sans-serif;
+    padding: 0.5rem 1.2rem;
+    border-radius: 2rem;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.fun-fact-btn:hover {
+    background: var(--accent);
+    color: var(--background);
+}
+
+.fun-fact-display {
+    margin-top: 1rem;
+    font-size: 0.95rem;
+    color: var(--primary-text);
+    background: var(--card);
+    border-left: 4px solid var(--accent);
+    padding: 0.8rem 1rem;
+    border-radius: 0 8px 8px 0;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.3s, transform 0.3s;
+    min-height: 0;
+}
+
+.fun-fact-display.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.education-section {
+    margin-bottom: 5rem;
+}
+
+.timeline {
+    position: relative;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 24px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: var(--accent);
+    opacity: 0.3;
+}
+
+.timeline-item {
+    position: relative;
+    padding-left: 70px;
+    margin-bottom: 2.5rem;
+}
+
+.timeline-dot {
+    position: absolute;
+    left: 12px;
+    top: 4px;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: var(--card);
+    border: 3px solid var(--accent);
+    z-index: 2;
+    transition: var(--transition);
+}
+
+.timeline-item:hover .timeline-dot {
+    background: var(--accent);
+    box-shadow: 0 0 15px var(--accent);
+}
+
+.timeline-content {
+    background: var(--card);
+    padding: 1.2rem 1.5rem;
+    border-radius: 12px;
+    box-shadow: var(--card-shadow);
+    transition: var(--transition);
+    border-left: 3px solid transparent;
+}
+
+.timeline-item:hover .timeline-content {
+    border-left-color: var(--accent);
+    box-shadow: var(--card-hover);
+}
+
+.timeline-content h3 {
+    font-size: 1.3rem;
+    margin-bottom: 0.3rem;
+}
+
+.timeline-date {
+    display: inline-block;
+    font-size: 0.85rem;
+    color: var(--accent);
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+.timeline-content p {
+    color: var(--secondary-text);
+    line-height: 1.5;
+}
+
+.timeline-dot.accent {
+    border-color: var(--cta-btn);
+}
+.timeline-item.current .timeline-content {
+    border-left: 3px solid var(--cta-btn);
+}

@@ -362,9 +362,12 @@ footer a:hover {
     -webkit-backdrop-filter: blur(4px);
     backdrop-filter: blur(4px);
     transition: var(--transition);
-    box-shadow: var(--card-shadow);
+    box-shadow: 0 0 12px var(--cta-btn);
 }
 
+.hero-toggle i {
+    font-size: 1.5rem;
+}
 .hero-toggle:hover {
     background: var(--cta-hover);
     color: var(--background);

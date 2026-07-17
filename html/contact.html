@@ -1,104 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>V's Portfolio – Contact</title>
-    <link rel="stylesheet" href="/css/main.css">
-    <link rel="stylesheet" href="/css/contact.css">
-    <link type="image/x-icon" rel="icon" href="/img/favicon.ico">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz@14..32&display=swap" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Krona+One&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-</head>
-<body>
-    <header>
-        <img src="/img/portfolio_logo.png" alt="V's Portfolio Logo" class="logo">
-        <a href="/" class="nav-link">Home</a>
-        <a href="/html/about.html" class="nav-link">About</a>
-        <a href="/html/work.html" class="nav-link">Works</a>
-        <button id="contact-btn">
-            Contact Me
-            <span class="arrow-circle"> →</span>
-        </button>
-    </header>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>V's Portfolio – Contact</title>
+        <link rel="stylesheet" href="/css/main.css">
+        <link rel="stylesheet" href="/css/contact.css">
+        <link type="image/x-icon" rel="icon" href="/img/favicon.ico">
+        <link href="https://fonts.googleapis.com/css2?family=Inter:opsz@14..32&display=swap" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=Krona+One&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    </head>
+    <body>
+        <header>
+            <img src="/img/portfolio_logo.png" alt="V's Portfolio Logo" class="logo">
+            <a href="/" class="nav-link">Home</a>
+            <a href="/html/about.html" class="nav-link">About</a>
+            <a href="/html/work.html" class="nav-link">Work</a>
+            <button id="contact-btn">
+                Contact Me
+                <span class="arrow-circle"><i class="fa-solid fa-arrow-right"></i></span>
+            </button>
+        </header>
 
-    <main class="contact-page">
-        <div class="contact-main">
-            <div class="contact-grid">
-                <!-- LEFT SIDE -->
-                <div class="contact-info">
-                    <h2>Let's get in touch</h2>
-                    <p>
-                        I'm always open to new opportunities, collaborations, or just a friendly chat about tech.
-                        Feel free to drop a message or find me on GitHub.
-                    </p>
+        <main class="contact-page">
+            <div class="contact-main">
+                <div class="contact-grid">
+                    <!-- LEFT SIDE -->
+                    <div class="contact-info">
+                        <h2>Let's get in touch</h2>
+                        <p>
+                            I'm always open to new opportunities, collaborations, or just a friendly chat about tech.
+                            Feel free to drop a message or find me on GitHub.
+                        </p>
 
-                    <div class="info-item">
-                        <i class="fa-brands fa-github"></i>
-                        <a href="https://github.com/viraitrisha" target="_blank" rel="noopener noreferrer">
-                            github.com/viraitrisha
-                        </a>
-                    </div>
-
-                    <div class="info-item">
-                        <i class="fa-regular fa-envelope"></i>
-                        <a href="mailto:viraitrish2006@gmail.com">viraitrish2006@gmail.com</a>
-                    </div>
-
-                    <!-- Mini Terminal (hidden console) -->
-                    <div class="mini-terminal" id="miniTerminal">
-                        <div class="terminal-header">
-                            <span class="terminal-dot red"></span>
-                            <span class="terminal-dot yellow"></span>
-                            <span class="terminal-dot green"></span>
-                            <span class="terminal-title">guest@portfolio ~ $</span>
+                        <div class="info-item">
+                            <i class="fa-brands fa-github"></i>
+                            <a href="https://github.com/viraitrisha" target="_blank" rel="noopener noreferrer">
+                                github.com/viraitrisha
+                            </a>
                         </div>
-                        <div class="terminal-body" id="terminalBody">
-                            <div class="terminal-line output">
-                                Type <span class="cmd">help</span> to see available commands.
+
+                        <div class="info-item">
+                            <i class="fa-regular fa-envelope"></i>
+                            <a href="mailto:viraitrish2006@gmail.com">viraitrish2006@gmail.com</a>
+                        </div>
+
+                        <!-- Mini Terminal (hidden console) -->
+                        <div class="mini-terminal" id="miniTerminal">
+                            <div class="terminal-header">
+                                <span class="terminal-dot red"></span>
+                                <span class="terminal-dot yellow"></span>
+                                <span class="terminal-dot green"></span>
+                                <span class="terminal-title">guest@portfolio ~ $</span>
+                            </div>
+                            <div class="terminal-body" id="terminalBody">
+                                <div class="terminal-line output">
+                                    Type <span class="cmd">help</span> to see available commands.
+                                </div>
+                            </div>
+                            <div class="terminal-input-line">
+                                <span class="prompt">$</span>
+                                <input type="text" id="terminalInput" placeholder="type a command..." autocomplete="off">
                             </div>
                         </div>
-                        <div class="terminal-input-line">
-                            <span class="prompt">$</span>
-                            <input type="text" id="terminalInput" placeholder="type a command..." autocomplete="off">
-                        </div>
+                    </div>
+
+                    <!-- RIGHT SIDE – Form -->
+                    <div class="contact-form-wrapper">
+                        <form id="contactForm">
+                            <div class="input-group">
+                                <label for="name">Name</label>
+                                <input type="text" id="name" name="name" placeholder="Your Name" required>
+                            </div>
+                            <div class="input-group">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" name="email" placeholder="you@example.com" required>
+                            </div>
+                            <div class="input-group">
+                                <label for="message">Message</label>
+                                <textarea id="message" name="message" rows="5" placeholder="What's on your mind?" required></textarea>
+                            </div>
+                            <button type="submit" class="send-btn" id="sendBtn">
+                                <i class="fa-regular fa-paper-plane"></i> Send Message
+                            </button>
+                            <div class="form-feedback" id="feedback">✔ Message sent! I'll get back to you soon.</div>
+                        </form>
                     </div>
                 </div>
-
-                <!-- RIGHT SIDE – Form -->
-                <div class="contact-form-wrapper">
-                    <form id="contactForm">
-                        <div class="input-group">
-                            <label for="name">Name</label>
-                            <input type="text" id="name" name="name" placeholder="Your Name" required>
-                        </div>
-                        <div class="input-group">
-                            <label for="email">Email</label>
-                            <input type="email" id="email" name="email" placeholder="you@example.com" required>
-                        </div>
-                        <div class="input-group">
-                            <label for="message">Message</label>
-                            <textarea id="message" name="message" rows="5" placeholder="What's on your mind?" required></textarea>
-                        </div>
-                        <button type="submit" class="send-btn" id="sendBtn">
-                            <i class="fa-regular fa-paper-plane"></i> Send Message
-                        </button>
-                        <div class="form-feedback" id="feedback">✔ Message sent! I'll get back to you soon.</div>
-                    </form>
-                </div>
             </div>
-        </div>
-    </main>
-    
-    <footer>
-        <p>&copy; 2026 Vanshika Trilok. All rights reserved.</p>
-        <a href="https://github.com/viraitrisha" rel="noopener noreferrer" target="_blank">
-            <i class="fa-brands fa-square-github"></i>
-        </a>
-    </footer>
+        </main>
+        
+        <footer>
+            <p>&copy; 2026 Vanshika Trilok. All rights reserved.</p>
+            <a href="https://github.com/viraitrisha" rel="noopener noreferrer" target="_blank">
+                <i class="fa-brands fa-github"></i>
+            </a>
+        </footer>
 
-    <script src="/js/main.js"></script>
-    <script src="/js/contact.js"></script>
-</body>
+        <script src="/js/main.js"></script>
+        <script src="/js/contact.js"></script>
+    </body>
 </html>
