@@ -68,6 +68,39 @@ if (skillsGrid) {
 }
 
 // ==========
+// ICONS ROTATE ON DB CLICK
+// ==========
+document.querySelectorAll('.hobby-card i').forEach(icon => {
+  icon.addEventListener('dblclick', () => {
+    icon.animate(
+      [
+        { transform: 'rotate(0deg)' },
+        { transform: 'rotate(360deg)' }
+      ],
+      {
+        duration: 600,
+        easing: 'ease-in-out'
+      }
+    );
+  });
+});
+
+const gameIcon = document.querySelector('#gameCard .fa-gamepad');
+
+gameIcon.addEventListener('dblclick', () => {
+  gameIcon.animate(
+    [
+      { transform: 'rotate(0deg)',  color: '#facc15' },
+      { transform: 'rotate(360deg)', color: '#ef4444' }
+    ],
+    {
+      duration: 600,
+      easing: 'ease-in-out'
+    }
+  );
+});
+
+// ==========
 // GAME CARD GLITCH
 // ==========
 const gameCard = document.getElementById('gameCard');
