@@ -32,10 +32,6 @@ document.getElementById('home-contact-btn')?.addEventListener('click', () => {
     window.location.href = './contact.html';
 });
 
-document.getElementById('about-button')?.addEventListener('click', () => {
-    window.location.href = './about.html';
-});
-
 // ==========
 // FOOTER SCROLL TO TOP
 // ==========

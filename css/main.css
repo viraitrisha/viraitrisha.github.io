@@ -152,6 +152,7 @@ h3 {
 #contact-btn,
 .home-contact-btn,
 .view-code-btn {
+    text-decoration: none;
     display: inline-flex;
     align-items: center;
     white-space: nowrap;
