@@ -1,25 +1,52 @@
-document.getElementById('contactForm').addEventListener('submit', function(e) {
+// ==========
+// CONTACT FORM FEEDBACK
+// ==========
+document.getElementById('contactForm').addEventListener('submit', async function(e) {
     e.preventDefault();
     const btn = document.getElementById('sendBtn');
     const feedback = document.getElementById('feedback');
+    const form = this;
 
     btn.classList.add('sending');
-    
-    btn.addEventListener('animationend', function handler() {
+
+    const formData = new FormData(form);
+
+    try {
+        const response = await fetch(form.action, {
+            method: 'POST',
+            body: formData,
+            headers: { 'Accept': 'application/json' }
+        });
+
+        setTimeout(() => btn.classList.remove('sending'), 200);
+
+        if (response.ok) {
+            feedback.innerHTML = '<i class="fa-solid fa-circle-check"></i> Message sent! I\'ll get back to you soon.';
+            feedback.className = 'form-feedback success show';
+            form.reset();
+        } else {
+            feedback.innerHTML = '<i class="fa-solid fa-circle-exclamation"></i> Something went wrong. Please try again.';
+            feedback.className = 'form-feedback error show';
+        }
+    } catch (error) {
         btn.classList.remove('sending');
-        btn.removeEventListener('animationend', handler);
-    });
+        feedback.innerHTML = '<i class="fa-solid fa-triangle-exclamation"></i> Network error. Please try again.';
+        feedback.className = 'form-feedback error show';
+    }
 
     setTimeout(() => {
-        feedback.classList.add('show');
+        feedback.classList.remove('show');
         
         setTimeout(() => {
-            this.reset();
-            feedback.classList.remove('show');
-        }, 2500);
-    }, 900);
+            feedback.innerHTML = '<i class="fa-solid fa-circle-check"></i> Message sent! I\'ll get back to you soon.';
+            feedback.className = 'form-feedback';
+        }, 400);
+    }, 4000);
 });
 
+// ==========
+// LEFT MINI TERMINAL
+// ==========
 (function() {
     const terminalBody = document.getElementById('terminalBody');
     const terminalInput = document.getElementById('terminalInput');
@@ -51,8 +78,10 @@ document.getElementById('contactForm').addEventListener('submit', function(e) {
         clear: () => { terminalBody.innerHTML = ''; return []; },
         secret: () => [
             'You found the hidden command!',
-            'Keep coding, keep dreaming.',
             '> exit'
+        ],
+        '???': () => [
+            "That's incorrect. Hint: it's a <span class=\"cmd\">Secret</span>."
         ]
     };
 

@@ -12,9 +12,14 @@
     </head>
     <body>
         <header>
-            <img src="/img/portfolio_logo.png" alt="V's Portfolio Logo" class="logo">
-            <a href="/" class="nav-link">Home</a>
-            <a href="/about.html" class="nav-link active">About</a>
+            <img src="/img/portfolio-logo.png" alt="V's Portfolio Logo" class="logo">
+            <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <a href="/" class="nav-link active">Home</a>
+            <a href="/about.html" class="nav-link">About</a>
             <a href="/work.html" class="nav-link">Work</a>
             <button id="contact-btn">
                 Contact Me
@@ -22,177 +27,187 @@
             </button>
         </header>
 
-        <main class="hero-section">
-            <canvas id="heroCanvas" aria-hidden="true"></canvas>
+        <main class="home-page">
+            <canvas id="nodeCanvas" aria-hidden="true"></canvas>
+             <section class="hero-section">
+                    <canvas id="heroCanvas" aria-hidden="true"></canvas>
 
-            <button class="hero-toggle" id="heroToggle" aria-label="Change hero animation" title="Change animation">
-                <i class="fa-solid fa-droplet"></i>
-            </button>
+                <button class="hero-toggle" id="heroToggle" aria-label="Change hero animation" title="Change animation">
+                    <i class="fa-solid fa-droplet"></i>
+                </button>
 
-            <div class="hero-container">
-                <div class="hero-image">
-                    <img src="https://placehold.co/400x400" alt="Vanshika" class="hero-img">
-                </div>
-                <div class="hero-content">
-                <h1><i>Hi,</i> <br> I'm <span class="highlight">Vanshika</span></h1>
-                <h2>
-                    <span id="typing-text"></span>
-                    <span class="cursor" aria-hidden="true">|</span>
-                </h2>
-                <p>Building digital solutions from frontend to backend | 2nd year Software Engineering student</p>
-                </div>
-            </div>
-        </main>
-
-        <section class="about-section">
-            <div class="about-container">
-                <!-- LEFT SIDE -->
-                <div class="about-text">
-                    <h2>About Me</h2>
-                    
-                    <p class="intro-text">
-                        I'm a 19-year-old Software Engineering student at UNASAT with a deep passion for building full-stack web applications. 
-                        My journey started with HTML &amp; CSS and has evolved into a strong command over modern frameworks like React and Tailwind 
-                        on the frontend, and Node.js, Hono, and PostgreSQL on the backend. I thrive on solving complex problems and writing 
-                        clean, maintainable code.
-                    </p>
-
-                    <div class="stats-grid">
-                        <div class="stat-item">
-                            <span class="stat-number">19</span>
-                            <span class="stat-label">Years Old</span>
-                        </div>
-                        <div class="stat-item">
-                            <span class="stat-number">2+</span>
-                            <span class="stat-label">Projects Built</span>
-                        </div>
-                        <div class="stat-item">
-                            <span class="stat-number">2nd</span>
-                            <span class="stat-label">Year SE Student</span>
-                        </div>
-                        <div class="stat-item">
-                            <span class="stat-number">2</span>
-                            <span class="stat-label">Languages (NL/EN)</span>
-                        </div>
+                <div class="hero-container">
+                    <div class="hero-image">
+                        <img src="/img/my-img.png" alt="Vanshika" class="hero-img">
+                    </div>
+                    <div class="hero-content">
+                    <h1><i>Hi,</i> <br> I'm <span class="highlight">Vanshika</span></h1>
+                    <h2>
+                        <span id="typing-text"></span>
+                        <span class="cursor" aria-hidden="true">|</span>
+                    </h2>
+                    <p>Building digital solutions from frontend to backend | 2nd year Software Engineering student</p>
                     </div>
                 </div>
+            </section>
 
-                <!-- RIGHT SIDE -->
-                <div class="about-img-wrapper">
-                    <div class="tech-stripe tech-stripe-left">
-                        <span class="stripe-line"></span>
-                        <span class="stripe-node"></span>
-                    </div>
-                    <div class="tech-stripe tech-stripe-right">
-                        <span class="stripe-line"></span>
-                        <span class="stripe-node"></span>
+            <section class="about-section">
+                <div class="about-container">
+                    <!-- LEFT SIDE -->
+                    <div class="about-text">
+                        <h2>About Me</h2>
+                        
+                        <p class="intro-text">
+                            I'm a 19-year-old Software Engineering student at UNASAT with a deep passion for building fullstack web applications. 
+                            My journey started with HTML & CSS and has evolved into a strong command over modern frameworks like React and Tailwind 
+                            on the frontend, and Node.js and MySQL/PostgreSQL on the backend. I thrive on solving complex problems and writing 
+                            clean, maintainable code.
+                        </p>
+
+                        <div class="stats-grid">
+                            <div class="stat-item">
+                                <span class="stat-number">19</span>
+                                <span class="stat-label">Years Old</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number">2+</span>
+                                <span class="stat-label">Projects Built</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number">2nd</span>
+                                <span class="stat-label">Year SE Student</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number">2</span>
+                                <span class="stat-label">Languages (NL/EN)</span>
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="avatar-container" id="avatarContainer">
-                        <div class="avatar-ring" id="avatarRing"></div>
-                        <img src="https://github.com/viraitrisha.png" 
-                            alt="Vanshika's GitHub Avatar" 
-                            class="about-img">
-                        <div class="code-comment" id="codeComment">/* 404 sleep not found */</div>
+                    <!-- RIGHT SIDE -->
+                    <div class="about-img-wrapper">
+                        <div class="tech-stripe tech-stripe-left">
+                            <span class="stripe-line"></span>
+                            <span class="stripe-node"></span>
+                        </div>
+                        <div class="tech-stripe tech-stripe-right">
+                            <span class="stripe-line"></span>
+                            <span class="stripe-node"></span>
+                        </div>
+
+                        <div class="avatar-container" id="avatarContainer">
+                            <div class="avatar-ring" id="avatarRing"></div>
+                            <img src="https://github.com/viraitrisha.png" 
+                                alt="Vanshika's GitHub Avatar" 
+                                class="about-img">
+                            <div class="code-comment" id="codeComment">/* 404 sleep not found */</div>
+                        </div>
+
+                        <button id="about-button" class="about-btn">
+                            More About Me
+                            <span class="arrow-circle"><i class="fa-solid fa-arrow-right"></i></span>
+                        </button>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="works-section">
+                <h2>Recent Works</h2>
+                <div class="works-container">
+                    <div class="work-card">
+                        <img src="/img/projects/weatherwise.png" alt="WeatherWise" class="work-image">
+                        <div class="work-info">
+                            <h3>WeatherWise</h3>
+                            <p>
+                                A real-time weather dashboard that lets you search any city, see current conditions, 
+                                wind speed and humidity. Built with vanilla JS and the OpenWeatherMap API.
+                            </p>
+                            <div class="work-tools">
+                                <span class="tool-tag">HTML</span>
+                                <span class="tool-tag">CSS</span>
+                                <span class="tool-tag">JavaScript</span>
+                            </div>
+                            <a href="https://github.com/viraitrisha/WeatherWise" target="_blank" rel="noopener noreferrer" class="work-link">
+                                <i class="fa-brands fa-github"></i> View Code
+                            </a>
+                        </div>
                     </div>
 
-                    <button id="about-button" class="about-btn">
-                        More About Me
-                        <span class="arrow-circle"> →</span>
+                    <div class="work-card">
+                        <img src="/img/projects/surihealth-v1.png" alt="SuriHealth V1" class="work-image">
+                        <div class="work-info">
+                            <h3>SuriHealth V1</h3>
+                            <p>
+                                A fullstack meal planner that helps users create menus based on dietary preferences, 
+                                generate shopping lists, and save favourite recipes. Built with Node.js, Express, and Prisma.
+                            </p>
+                            <div class="work-tools">
+                                <span class="tool-tag">HTML</span>
+                                <span class="tool-tag">CSS</span>
+                                <span class="tool-tag">JavaScript</span>
+                                <span class="tool-tag">Node.js</span>
+                                <span class="tool-tag">Express</span>
+                                <span class="tool-tag">Prisma</span>
+                            </div>
+                            <a href="https://github.com/viraitrisha/Surihealth-Old" target="_blank" rel="noopener noreferrer" class="work-link">
+                                <i class="fa-brands fa-github"></i> View Code
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="work-card featured">
+                        <span class="current-badge">Current Project</span>
+                        <img src="/img/projects/surihealth-v2.png" alt="SuriHealth V2" class="work-image">
+                        <div class="work-info">
+                            <h3>SuriHealth V2</h3>
+                            <p>
+                                Complete rebuild of SuriHealth using a fully type-safe modern stack. I'm handling the entire 
+                                backend — authentication, database schema, validation, and API design — with Drizzle, Zod, 
+                                and Better Auth.
+                            </p>
+                            <div class="work-tools">
+                                <span class="tool-tag">TanStack Start</span>
+                                <span class="tool-tag secret-tag">React</span>
+                                <span class="tool-tag">Tailwind</span>
+                                <span class="tool-tag">Vite</span>
+                                <span class="tool-tag secret-tag">Better Auth</span>
+                                <span class="tool-tag">Zod</span>
+                                <span class="tool-tag">Drizzle</span>
+                                <span class="tool-tag secret-tag">PostgreSQL</span>
+                            </div>
+                            <a href="https://github.com/viraitrisha/surihealth" target="_blank" rel="noopener noreferrer" class="work-link">
+                                <i class="fa-brands fa-github"></i> View Code
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="contact-section">
+                <div class="contact-container">
+                    <h2>Let's Talk</h2>
+                    <p>Have a question or want to collaborate?</p>
+                    <button id="home-contact-btn" class="home-contact-btn">
+                        Contact Me
+                        <span class="arrow-circle"><i class="fa-solid fa-arrow-right"></i></span>
                     </button>
                 </div>
-            </div>
-        </section>
-        
-        <section class="works-section">
-            <h2>Recent Works</h2>
-            <div class="works-container">
-                <div class="work-card">
-                    <img src="https://placehold.co/600x400" alt="WeatherWise" class="work-image">
-                    <div class="work-info">
-                        <h3>WeatherWise</h3>
-                        <p>
-                            A real-time weather dashboard that lets you search any city, see current conditions, 
-                            wind speed and humidity. Built with vanilla JS and the OpenWeatherMap API.
-                        </p>
-                        <div class="work-tools">
-                            <span class="tool-tag">HTML</span>
-                            <span class="tool-tag">CSS</span>
-                            <span class="tool-tag">JavaScript</span>
-                        </div>
-                        <a href="https://github.com/viraitrisha/WeatherWise" target="_blank" rel="noopener noreferrer" class="work-link">
-                            <i class="fa-brands fa-square-github"></i> View Code
-                        </a>
-                    </div>
-                </div>
-
-                <div class="work-card">
-                    <img src="https://placehold.co/600x400" alt="SuriHealth V1" class="work-image">
-                    <div class="work-info">
-                        <h3>SuriHealth V1</h3>
-                        <p>
-                            A fullstack meal planner that helps users create menus based on dietary preferences, 
-                            generate shopping lists, and save favourite recipes. Built with Node.js, Express, and Prisma.
-                        </p>
-                        <div class="work-tools">
-                            <span class="tool-tag">HTML</span>
-                            <span class="tool-tag">CSS</span>
-                            <span class="tool-tag">JavaScript</span>
-                            <span class="tool-tag">Node.js</span>
-                            <span class="tool-tag">Express</span>
-                            <span class="tool-tag">Prisma</span>
-                        </div>
-                        <a href="https://github.com/viraitrisha/Surihealth-Old" target="_blank" rel="noopener noreferrer" class="work-link">
-                            <i class="fa-brands fa-square-github"></i> View Code
-                        </a>
-                    </div>
-                </div>
-
-                <div class="work-card featured">
-                    <span class="current-badge">Current Project</span>
-                    <img src="https://placehold.co/600x400" alt="SuriHealth V2" class="work-image">
-                    <div class="work-info">
-                        <h3>SuriHealth V2</h3>
-                        <p>
-                            Complete rebuild of SuriHealth using a fully type-safe modern stack. I'm handling the entire 
-                            backend — authentication, database schema, validation, and API design — with Hono, Drizzle, Zod, 
-                            and Better Auth.
-                        </p>
-                        <div class="work-tools">
-                            <span class="tool-tag">TanStack Start</span>
-                            <span class="tool-tag secret-tag">React</span>
-                            <span class="tool-tag">Tailwind</span>
-                            <span class="tool-tag">Vite</span>
-                            <span class="tool-tag secret-tag">Better Auth</span>
-                            <span class="tool-tag">Zod</span>
-                            <span class="tool-tag">Drizzle</span>
-                            <span class="tool-tag secret-tag">PostgreSQL</span>
-                        </div>
-                        <a href="https://github.com/viraitrisha/surihealth" target="_blank" rel="noopener noreferrer" class="work-link">
-                            <i class="fa-brands fa-square-github"></i> View Code
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="contact-section">
-            <div class="contact-container">
-                <h2>Let's Talk</h2>
-                <p>Have a question or want to collaborate?</p>
-                <button id="home-contact-btn" class="home-contact-btn">
-                    Contact Me
-                    <span class="arrow-circle"><i class="fa-solid fa-arrow-right"></i></span>
-                </button>
-            </div>
-            <div class="bulb-field" id="bulbField" aria-hidden="true"></div>
-        </section>
+                <div class="bulb-field" id="bulbField" aria-hidden="true"></div>
+            </section>
+        </main>
         
         <footer>
-            <p>&copy; 2026 Vanshika Trilok. All rights reserved.</p>
-            <a href="https://github.com/viraitrisha" rel="noopener noreferrer" target="_blank">
-                <i class="fa-brands fa-github"></i>
-            </a>
+            <div class="footer-top">
+                <button class="scroll-top-btn" id="scrollTopBtn" aria-label="Scroll to top">
+                    <span class="arrow-circle"><i class="fa-solid fa-arrow-up"></i></span>
+                </button>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Vanshika Trilok. All rights reserved.</p>
+                <a href="https://github.com/viraitrisha" rel="noopener noreferrer" target="_blank" aria-label="GitHub">
+                    <i class="fa-brands fa-github"></i>
+                </a>
+            </div>
         </footer>
 
         <script src="/js/main.js"></script>

@@ -31,6 +31,14 @@ document.querySelector('.logo').addEventListener('click', () => {
 document.getElementById('home-contact-btn')?.addEventListener('click', () => {
     window.location.href = './contact.html';
 });
+
+// ==========
+// FOOTER SCROLL TO TOP
+// ==========
+document.getElementById('scrollTopBtn')?.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+
 // ==========
 // HERO CANVAS ANIMATION
 // ==========
@@ -279,6 +287,82 @@ document.getElementById('home-contact-btn')?.addEventListener('click', () => {
 })();
 
 // ==========
+// NODE CANVAS TREE
+// ==========
+(function() {
+    const canvas = document.getElementById('nodeCanvas');
+    if (!canvas) return;
+    const ctx = canvas.getContext('2d');
+    let width, height;
+
+    const nodes = [];
+    const MAX_NODES = 30;
+    const connectionDistance = 150;
+    const glowColor = getComputedStyle(document.documentElement).getPropertyValue('--accent').trim() || '#41D3BE';
+
+    function resize() {
+        width = canvas.width = window.innerWidth;
+        height = canvas.height = window.innerHeight;
+        nodes.length = 0;
+        for (let i = 0; i < MAX_NODES; i++) {
+            nodes.push({
+                x: Math.random() * width,
+                y: Math.random() * height,
+                vx: (Math.random() - 0.5) * 0.5,
+                vy: (Math.random() - 0.5) * 0.5,
+                radius: 2 + Math.random() * 3,
+            });
+        }
+    }
+
+    function draw() {
+        ctx.clearRect(0, 0, width, height);
+        
+        for (let i = 0; i < nodes.length; i++) {
+            for (let j = i + 1; j < nodes.length; j++) {
+                const dx = nodes[i].x - nodes[j].x;
+                const dy = nodes[i].y - nodes[j].y;
+                const dist = Math.sqrt(dx * dx + dy * dy);
+                if (dist < connectionDistance) {
+                    const opacity = 1 - dist / connectionDistance;
+                    ctx.beginPath();
+                    ctx.moveTo(nodes[i].x, nodes[i].y);
+                    ctx.lineTo(nodes[j].x, nodes[j].y);
+                    ctx.strokeStyle = glowColor + Math.floor(opacity * 120).toString(16).padStart(2, '0');
+                    ctx.lineWidth = 0.8;
+                    ctx.stroke();
+                }
+            }
+        }
+        
+        nodes.forEach(node => {
+            ctx.beginPath();
+            ctx.arc(node.x, node.y, node.radius * 2, 0, Math.PI * 2);
+            ctx.fillStyle = glowColor + '40';
+            ctx.fill();
+            
+            ctx.beginPath();
+            ctx.arc(node.x, node.y, node.radius, 0, Math.PI * 2);
+            ctx.fillStyle = glowColor + 'C0';
+            ctx.fill();
+        });
+
+        nodes.forEach(node => {
+            node.x += node.vx;
+            node.y += node.vy;
+            if (node.x < 0 || node.x > width) node.vx *= -1;
+            if (node.y < 0 || node.y > height) node.vy *= -1;
+        });
+
+        requestAnimationFrame(draw);
+    }
+
+    resize();
+    window.addEventListener('resize', resize);
+    draw();
+})();
+
+// ==========
 // ABOUT SECTION INTERACTIONS
 // ==========
 document.addEventListener('DOMContentLoaded', () => {
@@ -365,12 +449,44 @@ if (ageItem) {
 // ==========
 // WORKS SECTION TERMINAL
 // ==========
-(function() {
+(function () {
     const worksSection = document.querySelector('.works-section');
     if (!worksSection) return;
 
     const secretSequence = ['React', 'Better Auth', 'PostgreSQL'];
     let currentStep = 0;
+
+    let terminalActive = false;
+    let typingIntervalId = null;
+    let displayTimeoutId = null;
+    let terminalMsgEl = null;
+
+    function cancelTerminal() {
+        if (!terminalActive) return;
+        terminalActive = false;
+
+        if (typingIntervalId) {
+        clearInterval(typingIntervalId);
+        typingIntervalId = null;
+        }
+
+        if (displayTimeoutId) {
+        clearTimeout(displayTimeoutId);
+        displayTimeoutId = null;
+        }
+
+        if (terminalMsgEl && terminalMsgEl.parentNode) {
+        terminalMsgEl.parentNode.removeChild(terminalMsgEl);
+        }
+        terminalMsgEl = null;
+        worksSection.classList.remove('terminal');
+    }
+
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && terminalActive) {
+        cancelTerminal();
+        }
+    });
 
     worksSection.addEventListener('click', (e) => {
         const tag = e.target.closest('.tool-tag');
@@ -378,58 +494,62 @@ if (ageItem) {
 
         const tagText = tag.textContent.trim();
         if (tagText === secretSequence[currentStep]) {
-            currentStep++;
+        currentStep++;
 
-            tag.style.transform = 'scale(1.2)';
-            tag.style.boxShadow = '0 0 15px var(--cta-btn)';
-            setTimeout(() => {
-                tag.style.transform = '';
-                tag.style.boxShadow = '';
-            }, 300);
+        tag.style.transform = 'scale(1.2)';
+        tag.style.boxShadow = '0 0 15px var(--cta-btn)';
+        setTimeout(() => {
+            tag.style.transform = '';
+            tag.style.boxShadow = '';
+        }, 300);
 
-            if (currentStep === secretSequence.length) {
-                triggerTerminal();
-                currentStep = 0;
-            }
-        } else {
+        if (currentStep === secretSequence.length) {
+            triggerTerminal();
             currentStep = 0;
+        }
+        } else {
+        currentStep = 0;
         }
     });
 
     function triggerTerminal() {
-        
+        if (terminalActive) return;
+        terminalActive = true;
+
         worksSection.classList.add('terminal');
 
-        const msg = document.createElement('div');
+        const msg = document.createElement('pre');
         msg.className = 'terminal-msg';
         msg.textContent = '';
         worksSection.appendChild(msg);
+        terminalMsgEl = msg;
 
-        const fullMsg = 
-            "Vanshika@DESKTOP-CODE MINGW64 ~/portfolio\n" +
-            "$ git log --oneline --graph --all\n" +
-            "* a1b2c3d (HEAD -> main) SuriHealth V2: type-safe rebuild\n" +
-            "* e4f5g6h WeatherWise: live weather dashboard\n" +
-            "* i7j8k9l Initial commit: portfolio launch\n\n" +
-            "Vanshika@DESKTOP-CODE MINGW64 ~/portfolio\n" +
-            "$ git checkout secret-branch\n" +
-            "Switched to branch 'secret-branch'\n\n" +
-            "Vanshika@DESKTOP-CODE MINGW64 ~/portfolio (secret-branch)\n" +
-            "$ cat secret.txt\n" +
-            "You found the secret!";
+        const fullMsg =
+        "Vanshika@DESKTOP-CODE MINGW64 ~/portfolio\n" +
+        "$ git log --oneline --graph --all\n" +
+        "* a1b2c3d (HEAD -> main) SuriHealth V2: type-safe rebuild\n" +
+        "* e4f5g6h WeatherWise: live weather dashboard\n" +
+        "* i7j8k9l Initial commit: portfolio launch\n\n" +
+        "Vanshika@DESKTOP-CODE MINGW64 ~/portfolio\n" +
+        "$ git checkout secret-branch\n" +
+        "Switched to branch 'secret-branch'\n\n" +
+        "Vanshika@DESKTOP-CODE MINGW64 ~/portfolio (secret-branch)\n" +
+        "$ cat secret.txt\n" +
+        "You found the secret!";
+
         let i = 0;
-        const typingInterval = setInterval(() => {
-            if (i < fullMsg.length) {
-                msg.textContent += fullMsg.charAt(i);
-                i++;
-            } else {
-                clearInterval(typingInterval);
+        typingIntervalId = setInterval(() => {
+        if (i < fullMsg.length) {
+            msg.textContent += fullMsg.charAt(i);
+            i++;
+        } else {
+            clearInterval(typingIntervalId);
+            typingIntervalId = null;
 
-                setTimeout(() => {
-                    worksSection.classList.remove('terminal');
-                    if (msg.parentNode) msg.parentNode.removeChild(msg);
-                }, 5000);
-            }
+            displayTimeoutId = setTimeout(() => {
+            cancelTerminal();
+            }, 5000);
+        }
         }, 30);
     }
 })();
@@ -479,3 +599,27 @@ if (ageItem) {
         document.body.classList.add('light-mode');
     }
 })();
+
+// ========== HAMBURGER MENU TOGGLE ==========
+const hamburger = document.getElementById('hamburger');
+if (hamburger) {
+    hamburger.addEventListener('click', () => {
+        document.body.classList.toggle('nav-open');
+    });
+
+    // Close menu when a nav link is clicked
+    const mobileNavLinks = document.querySelectorAll('.nav-link');
+    mobileNavLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            document.body.classList.remove('nav-open');
+        });
+    });
+
+    // Also close when contact button clicked
+    const contactBtn = document.getElementById('contact-btn');
+    if (contactBtn) {
+        contactBtn.addEventListener('click', () => {
+            document.body.classList.remove('nav-open');
+        });
+    }
+}

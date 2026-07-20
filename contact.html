@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>V's Portfolio – Contact</title>
+        <title>V's Portfolio</title>
         <link rel="stylesheet" href="/css/main.css">
         <link rel="stylesheet" href="/css/contact.css">
         <link type="image/x-icon" rel="icon" href="/img/favicon.ico">
@@ -13,9 +13,14 @@
     </head>
     <body>
         <header>
-            <img src="/img/portfolio_logo.png" alt="V's Portfolio Logo" class="logo">
-            <a href="/" class="nav-link">Home</a>
-            <a href="/about.html" class="nav-link active">About</a>
+            <img src="/img/portfolio-logo.png" alt="V's Portfolio Logo" class="logo">
+            <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <a href="/" class="nav-link active">Home</a>
+            <a href="/about.html" class="nav-link">About</a>
             <a href="/work.html" class="nav-link">Work</a>
             <button id="contact-btn">
                 Contact Me
@@ -24,11 +29,12 @@
         </header>
 
         <main class="contact-page">
+            <canvas id="nodeCanvas" aria-hidden="true"></canvas>
             <div class="contact-main">
                 <div class="contact-grid">
                     <!-- LEFT SIDE -->
                     <div class="contact-info">
-                        <h2>Let's get in touch</h2>
+                        <h2>Let's Talk</h2>
                         <p>
                             I'm always open to new opportunities, collaborations, or just a friendly chat about tech.
                             Feel free to drop a message or find me on GitHub.
@@ -46,7 +52,7 @@
                             <a href="mailto:viraitrish2006@gmail.com">viraitrish2006@gmail.com</a>
                         </div>
 
-                        <!-- Mini Terminal (hidden console) -->
+                        <!-- TERMINAL -->
                         <div class="mini-terminal" id="miniTerminal">
                             <div class="terminal-header">
                                 <span class="terminal-dot red"></span>
@@ -66,9 +72,9 @@
                         </div>
                     </div>
 
-                    <!-- RIGHT SIDE – Form -->
+                    <!-- RIGHT SIDE -->
                     <div class="contact-form-wrapper">
-                        <form id="contactForm">
+                        <form id="contactForm" action="https://formspree.io/f/mykrjkep" method="POST">
                             <div class="input-group">
                                 <label for="name">Name</label>
                                 <input type="text" id="name" name="name" placeholder="Your Name" required>
@@ -84,7 +90,7 @@
                             <button type="submit" class="send-btn" id="sendBtn">
                                 <i class="fa-regular fa-paper-plane"></i> Send Message
                             </button>
-                            <div class="form-feedback" id="feedback">✔ Message sent! I'll get back to you soon.</div>
+                            <div class="form-feedback" id="feedback">Message sent! I'll get back to you soon.</div>
                         </form>
                     </div>
                 </div>
@@ -92,10 +98,17 @@
         </main>
         
         <footer>
-            <p>&copy; 2026 Vanshika Trilok. All rights reserved.</p>
-            <a href="https://github.com/viraitrisha" rel="noopener noreferrer" target="_blank">
-                <i class="fa-brands fa-github"></i>
-            </a>
+            <div class="footer-top">
+                <button class="scroll-top-btn" id="scrollTopBtn" aria-label="Scroll to top">
+                    <span class="arrow-circle"><i class="fa-solid fa-arrow-up"></i></span>
+                </button>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Vanshika Trilok. All rights reserved.</p>
+                <a href="https://github.com/viraitrisha" rel="noopener noreferrer" target="_blank" aria-label="GitHub">
+                    <i class="fa-brands fa-github"></i>
+                </a>
+            </div>
         </footer>
 
         <script src="/js/main.js"></script>

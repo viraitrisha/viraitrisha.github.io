@@ -1,0 +1,344 @@
+.work-page {
+    padding: 8rem;
+    padding-bottom: 4rem;
+}
+
+.work-hero {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.page-title {
+    color: var(--primary-text);
+    margin-bottom: 0.8rem;
+}
+
+.page-subtitle {
+    color: var(--secondary-text);
+    font-size: 1.5rem;
+}
+
+.filter-section {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 4rem;
+}
+
+.filter-btns {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    font-family: 'Krona One', sans-serif;
+    background: transparent;
+    border: 1px solid var(--accent);
+    font-weight: bold;
+    color: var(--accent);
+    padding: 0.5rem 1.5rem;
+    border-radius: 2rem;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+    background: var(--accent);
+    color: var(--background);
+}
+
+.projects-timeline {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.projects-timeline::before {
+    content: '';
+    position: absolute;
+    left: 30px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: var(--accent);
+    opacity: 0.3;
+}
+
+.project-item {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 4rem;
+    padding-left: 4rem;
+    position: relative;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.project-item::before {
+    content: '';
+    position: absolute;
+    left: 18px;
+    top: 10px;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: var(--card);
+    border: 3px solid var(--accent);
+    z-index: 2;
+    transition: var(--transition);
+}
+
+.project-item:hover::before {
+    background: var(--accent);
+    box-shadow: var(--accent-glow);
+}
+
+.project-thumb {
+    flex-shrink: 0;
+    width: 300px;
+    height: 150px;
+    border-radius: 16px;
+    overflow: hidden;
+    border: 2px solid var(--accent);
+    box-shadow: var(--card-shadow);
+    transition: var(--transition);
+}
+
+.project-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.project-item:hover .project-thumb {
+    transform: scale(1.02);
+    border-color: var(--cta-btn);
+}
+
+.project-content {
+    flex: 1;
+}
+
+.project-header {
+    display: flex;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    margin-bottom: 0.5rem;
+}
+
+.project-header h3 {
+    font-size: 1.6rem;
+    margin: 0;
+}
+
+.project-date {
+    font-size: 0.9rem;
+    color: var(--accent);
+    font-weight: bold;
+}
+
+.project-status {
+    padding: 0.4rem 0.8rem;
+    border-radius: 2rem;
+    text-transform: uppercase;
+    background: var(--accent);
+    box-shadow: var(--card-shadow);
+    color: var(--background);
+    font-family: 'Krona One', sans-serif;
+    font-size: 0.75rem;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+}
+
+.project-desc {
+    color: var(--secondary-text);
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.tech-blocks {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    margin-bottom: 1.2rem;
+}
+
+.tech-block {
+    background: var(--tags);
+    color: var(--primary-text);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.8rem;
+    font-weight: bold;
+    padding: 0.4rem 1rem;
+    border-radius: 6px;
+    border: 1px solid var(--accent);
+    transition: var(--transition);
+    cursor: default;
+}
+
+.tech-block:hover {
+    background: var(--accent);
+    color: var(--background);
+    box-shadow: var(--accent-glow);
+}
+
+.project-actions {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-bottom: 0.5rem;
+}
+
+.detail-btn {
+    background: var(--card);
+    color: var(--accent);
+    border: 1px solid var(--accent);
+    font-family: 'Krona One', sans-serif;
+    font-size: 0.85rem;
+    padding: 0.4rem 1.2rem;
+    border-radius: 2rem;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.detail-btn:hover {
+    background: var(--accent);
+    color: var(--background);
+}
+
+.view-code-btn {
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.85rem;
+    text-decoration: none;
+    padding: 0.4rem 1.2rem;
+    transition: var(--transition);
+}
+
+.view-code-btn i {
+    font-size: 1rem;
+}
+
+.view-code-btn:hover {
+    background: var(--cta-hover);
+    box-shadow: var(--btn-shadow);
+    transform: scale(1.03);
+}
+
+.project-extra {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.4s ease, opacity 0.3s ease, margin-top 0.3s ease;
+    background: var(--card);
+    border-left: 4px solid var(--accent);
+    padding: 0 1rem;
+    border-radius: 0 10px 10px 0;
+    margin-top: 0;
+}
+
+.project-extra.open {
+    max-height: 150px;
+    opacity: 1;
+    padding: 0.8rem 1rem;
+    margin-top: 1rem;
+}
+
+.project-extra p {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: var(--secondary-text);
+}
+
+.project-item.hidden {
+    opacity: 0;
+    transform: translateX(-20px);
+    pointer-events: none;
+    position: absolute;
+    visibility: hidden;
+}
+
+.tech-block.pulse-highlight {
+    animation: techPulse 0.6s ease 2;
+    border-color: var(--cta-btn);
+    box-shadow: 0 0 15px var(--cta-btn);
+}
+
+@keyframes techPulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+/* ========== RESPONSIVENESS ========== */
+/* Tablet */
+@media (max-width: 1024px) {
+    .work-page {
+        padding: 6rem 2rem 4rem;
+    }
+
+    .projects-timeline::before {
+        left: 18px;
+    }
+
+    .project-item {
+        padding-left: 3rem;
+        gap: 1.5rem;
+    }
+
+    .project-item::before {
+        left: 6px;
+        width: 20px;
+        height: 20px;
+    }
+
+    .project-thumb {
+        width: 220px;
+        height: 130px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .work-page {
+        padding: 5rem 1.5rem 3rem;
+    }
+
+    .page-subtitle {
+        font-size: 1.2rem;
+    }
+
+    .filter-btns {
+        gap: 0.6rem;
+    }
+
+    .filter-btn {
+        padding: 0.4rem 1.2rem;
+        font-size: 0.8rem;
+    }
+
+    .project-item {
+        flex-direction: column;
+        padding-left: 50px;
+        gap: 1rem;
+    }
+
+    .project-thumb {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 16/9;
+    }
+
+    .project-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.3rem;
+    }
+
+    .project-actions {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
