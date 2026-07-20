@@ -32,6 +32,10 @@ document.getElementById('home-contact-btn')?.addEventListener('click', () => {
     window.location.href = './contact.html';
 });
 
+document.getElementById('about-button')?.addEventListener('click', () => {
+    window.location.href = './about.html';
+});
+
 // ==========
 // FOOTER SCROLL TO TOP
 // ==========
@@ -600,14 +604,15 @@ if (ageItem) {
     }
 })();
 
-// ========== HAMBURGER MENU TOGGLE ==========
+// ==========
+// HAMBURGER
+// ==========
 const hamburger = document.getElementById('hamburger');
 if (hamburger) {
     hamburger.addEventListener('click', () => {
         document.body.classList.toggle('nav-open');
     });
 
-    // Close menu when a nav link is clicked
     const mobileNavLinks = document.querySelectorAll('.nav-link');
     mobileNavLinks.forEach(link => {
         link.addEventListener('click', () => {
@@ -615,7 +620,6 @@ if (hamburger) {
         });
     });
 
-    // Also close when contact button clicked
     const contactBtn = document.getElementById('contact-btn');
     if (contactBtn) {
         contactBtn.addEventListener('click', () => {
