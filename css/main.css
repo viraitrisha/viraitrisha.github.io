@@ -1284,3 +1284,146 @@ footer::before {
         font-size: 0.95rem;
     }
 }
+
+/* Small Mobile */
+@media (max-width: 480px) {
+    h1 { 
+        font-size: 2rem; 
+    }
+
+    h2 { 
+        font-size: 1.5rem; 
+    }
+
+    h3 { 
+        font-size: 1.3rem; 
+    }
+
+    .logo { 
+        width: 2.5rem; 
+    }
+
+    .hero-section {
+        min-height: 70vh;
+        border-bottom-left-radius: 1.5rem;
+        border-bottom-right-radius: 1.5rem;
+    }
+
+    .hero-container { 
+        padding: 0.8rem; 
+    }
+
+    .hero-image { 
+        max-width: 160px; 
+    }
+
+    .hero-content h1 { 
+        font-size: 2rem; 
+    }
+
+    .hero-content h2 { 
+        font-size: 1.1rem; 
+    }
+
+    .hero-content p { 
+        font-size: 0.9rem; 
+    }
+
+    .about-section { 
+        padding: 1rem; 
+    }
+
+    .about-container { 
+        gap: 1.5rem; 
+    }
+
+    .about-text h2 { 
+        font-size: 1.8rem; 
+    }
+
+    .intro-text { 
+        font-size: 0.9rem; 
+    }
+
+    .stats-grid { 
+        gap: 0.6rem; 
+    }
+
+    .stat-item { 
+        padding: 0.8rem 0.5rem; 
+    }
+
+    .stat-number { 
+        font-size: 1.4rem; 
+    }
+
+    .avatar-container { 
+        width: 180px; height: 180px; 
+    }
+
+    .works-section { 
+        padding: 1rem; 
+    }
+
+    .works-section h2 {
+        font-size: 1.6rem;
+        margin-right: 0;
+        margin-left: 0;
+    }
+
+    .works-container { 
+        gap: 1rem; 
+    }
+
+    .work-card { 
+        border-radius: 1rem; 
+    }
+
+    .work-info { 
+        padding: 1rem; 
+    }
+
+    .work-info h3 { 
+        font-size: 1.2rem; 
+    }
+
+    .work-info p { 
+        font-size: 0.85rem; 
+    }
+
+    .contact-section { 
+        min-height: 60vh; padding: 1rem; 
+    }
+
+    .contact-container h2 { 
+        font-size: 1.8rem; 
+    }
+
+    .contact-container p { 
+        font-size: 0.85rem; 
+    }
+
+    .bulb { 
+        font-size: 1.5rem; 
+    }
+
+    .footer-bottom { 
+        flex-direction: column; text-align: center; 
+    }
+
+    .footer-bottom p { 
+        font-size: 0.8rem; 
+    }
+
+    .footer-bottom a { 
+        font-size: 1.5rem; 
+    }
+
+    header { 
+        padding: 0.5rem; 
+    }
+
+    #contact-btn { 
+        font-size: 0.8rem; padding: 0.4rem 0.8rem; 
+}
+}

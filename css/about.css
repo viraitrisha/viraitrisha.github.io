@@ -481,3 +481,123 @@ body.glitch-active::before {
         width: 8px;
     }
 }
+
+/* Small Mobile */
+@media (max-width: 480px) {
+    .about-page {
+        padding: 4rem 1rem 2rem;
+    }
+
+    .section-title {
+        margin-top: 4rem;
+        font-size: 1.5rem;
+    }
+
+    .profile-hero {
+        gap: 1.5rem;
+        margin-bottom: 3rem;
+    }
+
+    .profile-img-wrapper {
+        width: 80%;
+        max-width: 220px;
+    }
+
+    .profile-intro h2 {
+        font-size: 1.8rem;
+    }
+
+    .profile-tagline {
+        font-size: 1rem;
+    }
+
+    .profile-bio {
+        font-size: 0.9rem;
+        line-height: 1.6;
+    }
+
+    .fun-fact-btn {
+        padding: 0.4rem 1rem;
+        font-size: 0.8rem;
+    }
+
+    .timeline::before {
+        left: 12px;
+    }
+
+    .timeline-item {
+        padding-left: 45px;
+        margin-bottom: 2rem;
+    }
+
+    .timeline-dot {
+        left: 4px;
+        width: 18px;
+        height: 18px;
+    }
+
+    .timeline-content {
+        padding: 1rem;
+    }
+
+    .timeline-content h3 {
+        font-size: 1.1rem;
+    }
+
+    .timeline-date {
+        font-size: 0.75rem;
+    }
+
+    .skills-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .skill-item {
+        padding: 0.8rem;
+    }
+
+    .skill-name {
+        font-size: 0.9rem;
+    }
+
+    .skill-level {
+        font-size: 0.75rem;
+    }
+
+    .skill-bar {
+        height: 6px;
+    }
+
+    .hobbies-grid {
+        grid-template-columns: 1fr;
+        gap: 1.2rem;
+    }
+
+    .hobby-card {
+        padding: 1.2rem 1rem;
+    }
+
+    .hobby-card i {
+        font-size: 2rem;
+    }
+
+    .hobby-card h3 {
+        font-size: 1.1rem;
+    }
+
+    .hobby-card p {
+        font-size: 0.85rem;
+    }
+
+    .monocle {
+        top: 10px;
+        left: 12px;
+        width: 18px;
+        height: 18px;
+    }
+
+    .monocle::after {
+        width: 6px;
+    }
+}

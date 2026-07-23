@@ -345,3 +345,89 @@
         margin-top: 1.8rem;
     }
 }
+
+/* Small Mobile */
+@media (max-width: 480px) {
+    .contact-page {
+        padding-top: 5rem;
+    }
+
+    .contact-main {
+        padding: 1rem;
+    }
+
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 1.8rem;
+    }
+
+    .contact-info h2 {
+        font-size: 1.8rem;
+    }
+
+    .contact-info > p {
+        font-size: 0.9rem;
+        line-height: 1.5;
+    }
+
+    .info-item {
+        gap: 0.6rem;
+        margin-bottom: 0.8rem;
+    }
+
+    .info-item i {
+        font-size: 1.2rem;
+    }
+
+    .info-item a {
+        font-size: 0.9rem;
+    }
+
+    .mini-terminal {
+        margin-top: 1.2rem;
+    }
+
+    .terminal-body {
+        font-size: 0.75rem;
+        padding: 0.6rem 0.8rem;
+        max-height: 150px;
+    }
+
+    #terminalInput {
+        font-size: 0.75rem;
+    }
+
+    .contact-form-wrapper {
+        padding: 1.2rem;
+        border-radius: 1rem;
+    }
+
+    .input-group label {
+        font-size: 0.9rem;
+    }
+
+    .input-group input,
+    .input-group textarea {
+        padding: 0.6rem 0.8rem;
+        font-size: 0.9rem;
+        border-radius: 0.6rem;
+    }
+
+    .input-group textarea {
+        min-height: 80px;
+    }
+
+    .send-btn {
+        padding: 0.6rem 1rem;
+        font-size: 0.9rem;
+    }
+
+    .send-btn i {
+        font-size: 1.2rem;
+    }
+
+    .form-feedback {
+        font-size: 0.85rem;
+        padding: 0.6rem 1rem;
+    }
+}
