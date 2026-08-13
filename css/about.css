@@ -345,13 +345,13 @@
     left: 22px;
     width: 24px;
     height: 24px;
-    border: 2px solid var(--cta-btn);
+    border: 2px solid #F5C518;
     border-radius: 50%;
     opacity: 0;
     pointer-events: none;
     z-index: 5;
     transition: opacity 0.3s;
-    box-shadow: 0 0 8px var(--cta-btn);
+    box-shadow: 0 0 8px #F5C518;
 }
 
 .monocle::after {
@@ -361,7 +361,7 @@
     right: -8px;
     width: 10px;
     height: 2px;
-    background: var(--cta-btn);
+    background: #F5C518;
     transform: translateY(-50%);
 }
 
